@@ -8,11 +8,13 @@ import '../../styles/components/form/form-container.sass'
 
 import useMask from '../../hooks/useMask.jsx';
 import useFlashMessage from '../../hooks/useFlashMessage';
+import useLoading from '../../hooks/useLoading';
 
 import { Context } from '../../context/UserContext';
 
 function Edit() {
     const { setFlashMessage } = useFlashMessage();
+    const { setLoading } = useLoading();
     const { maskPhone } = useMask();
     const { logout } = useContext(Context);
 
@@ -44,6 +46,7 @@ function Edit() {
     };
 
     const update = async () => {
+        setLoading(true);
         let msgType = 'success';
         let msgText = ''
         await api.patch(`atualizar_usuario/${JSON.parse(id)}`, user, {
@@ -61,10 +64,12 @@ function Edit() {
                 err.response.status === 401 ? logout() : '';
                 return err.response.data;
             })
+        setLoading(false);
         setFlashMessage(msgText, msgType);
     };
 
     const removeAccount = async () => {
+        setLoading(true);
         let msgType = 'success';
         let msgText = ''
         await api.delete(`deletar_usuario/${JSON.parse(id)}`, {
@@ -83,6 +88,7 @@ function Edit() {
                 err.response.status === 401 ? logout() : '';
                 return err.response.data;
             })
+        setLoading(false);
         setFlashMessage(msgText, msgType);
     };
 

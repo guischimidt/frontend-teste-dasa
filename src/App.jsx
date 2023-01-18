@@ -4,6 +4,7 @@ import Container from './components/layout/Container';
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
 import Message from './components/layout/Message.jsx';
+import Loading from './components/layout/Loading.jsx';
 
 import Login from './components/pages/Login';
 import Edit from './components/pages/Edit';
@@ -16,6 +17,7 @@ function App() {
   return (
     <Router>
       <UserProvider>
+        <Loading />
         <Navbar />
         <Message />
         <Container>
