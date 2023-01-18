@@ -1,0 +1,53 @@
+@use '../../variables'
+
+.form_control
+    display: flex
+    flex-direction: column
+    margin-bottom: 1em
+    label
+        box-sizing: border-box
+        display: flex
+        position: absolute
+        margin-bottom: .3em
+        font-weight: 400
+        font-size: 1em
+        padding-left: 0.75em
+        padding-right: 0.25em
+        padding-top: 1.2em
+        transition: all 200ms ease 0s
+        position: absolute
+        pointer-events: none
+        color: variables.$gray-60
+
+    input
+        margin-bottom: 1em
+        padding: 0.5em 3em 0.5em 0.75em
+        border: 1px solid variables.$border-color
+        border-radius: 4px
+        height: 40px
+        &:focus + label
+            transform: translateY(-0.525rem)
+            font-size: 0.75em
+            background-color: variables.$body-bg-color
+            margin: 0 0 0 .75em
+            padding-left: 0.25em
+            padding-right: 0.25em
+            padding-top: 0
+        &:valid
+            &:focus
+                border-color: variables.$thirdy-blue
+            &:valid + label
+                transform: translateY(-0.525rem)
+                font-size: 0.75em
+                background-color: variables.$body-bg-color
+                margin: 0 0 0 .75em
+                padding-left: 0.25em
+                padding-right: 0.25em
+                padding-top: 0
+            &:focus + label
+                color: variables.$thirdy-blue
+        &:invalid
+            &:focus
+                border-color: variables.$orange
+            &:focus + label
+                color: variables.$orange

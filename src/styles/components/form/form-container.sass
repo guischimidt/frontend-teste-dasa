@@ -1,0 +1,38 @@
+@use '../../variables'
+@use '../../mixins'
+
+.form_container
+    max-width: 434px
+    margin: 0 auto
+    background-color: variables.$body-bg-color
+    border-radius: 15px
+    @include mixins.btn
+
+    p
+        margin-bottom: 2em
+        a
+            color: variables.$thirdy-blue
+
+.btnAdd
+    font-size: 0.75em
+    cursor: pointer
+    background-color: variables.$thirdy-blue
+    font-weight: bold
+    color: #fff
+    padding: 0.4em
+    border-radius: 5px
+    margin-bottom: 0.8em
+    margin-right: 0.3em
+    display: inline-block
+
+.btnRemove
+    font-size: 0.75em
+    cursor: pointer
+    background-color: variables.$orange
+    font-weight: bold
+    color: #fff
+    padding: 0.4em
+    border-radius: 5px
+    margin-bottom: 0.8em
+    margin-right: 0.3em
+    display: inline-block

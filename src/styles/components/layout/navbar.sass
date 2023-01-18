@@ -1,0 +1,32 @@
+@use '../../variables'
+
+.navbar_logo
+    display: flex
+    align-items: center
+    img
+        width: 40px
+        margin-right: 0.8em
+.navbar
+    display: flex
+    justify-content: space-between
+    padding: 1em 1.5em
+    background-color: variables.$primary-blue
+    color: variables.$orange
+    ul
+        display: flex
+        align-items: center
+        list-style: none
+    li
+        &:hover
+            background-color: variables.$orange
+            & > a
+                color: variables.$primary-blue
+.navbar li,
+.navbar a
+    text-decoration: none
+    font-weight: bold
+    color: #fff
+    cursor: pointer
+    transition: 0.5s
+    padding: 0.5em 0.8em
+    border-radius: 5px
